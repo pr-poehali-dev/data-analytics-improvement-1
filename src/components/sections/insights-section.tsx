@@ -5,24 +5,24 @@ import { ArrowRight } from "lucide-react"
 
 const articles = [
   {
-    title: "Искусство визуального сторителлинга",
-    category: "Дизайн",
-    image: "/visual-storytelling-design-article.jpg",
+    title: "Как не забыть про день рождения лучшего друга",
+    category: "Советы",
+    image: "https://cdn.poehali.dev/projects/957a3b22-5fd8-4019-958f-03c509698ece/files/5a10e7c3-2af6-4777-aece-f2aae9534f73.jpg",
   },
   {
-    title: "Как создать личный бренд онлайн",
-    category: "Стратегия",
-    image: "/personal-branding-digital-marketing.jpg",
+    title: "10 универсальных идей подарков на любой случай",
+    category: "Подарки",
+    image: "https://cdn.poehali.dev/projects/957a3b22-5fd8-4019-958f-03c509698ece/files/e5e67bac-38e2-475f-9e2e-9d3a915c32c2.jpg",
   },
   {
-    title: "Тренды типографики 2025",
-    category: "Типографика",
-    image: "/typography-trends-modern-fonts.jpg",
+    title: "Годовщины и важные даты: как организовать память",
+    category: "Организация",
+    image: "https://cdn.poehali.dev/projects/957a3b22-5fd8-4019-958f-03c509698ece/files/e687b0a9-e879-45d4-9b02-0293cf6923b0.jpg",
   },
   {
-    title: "Минимализм в дизайне портфолио",
-    category: "Вдохновение",
-    image: "/placeholder.svg?height=200&width=300",
+    title: "Персональный подарок vs. сертификат: что выбрать",
+    category: "Подарки",
+    image: "https://cdn.poehali.dev/projects/957a3b22-5fd8-4019-958f-03c509698ece/files/5a10e7c3-2af6-4777-aece-f2aae9534f73.jpg",
   },
 ]
 
@@ -43,7 +43,7 @@ export function InsightsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Статьи
+          Полезное
         </motion.p>
 
         <div className="divide-y divide-border">

@@ -3,18 +3,18 @@ import { Check } from "lucide-react"
 
 const plans = [
   {
-    name: "Старт",
-    price: "1 200",
-    period: " руб/мес",
-    description: "Для личного портфолио",
-    features: ["5 страниц", "Свой домен", "Базовая аналитика", "Поддержка по email"],
+    name: "Бесплатно",
+    price: "0",
+    period: " навсегда",
+    description: "Для личного использования",
+    features: ["До 10 важных дат", "Напоминания за 3 дня", "Список идей подарков", "Доступ с любого устройства"],
   },
   {
     name: "Про",
-    price: "2 900",
+    price: "199",
     period: " руб/мес",
-    description: "Для растущих авторов",
-    features: ["Безлимит страниц", "Приоритет поддержки", "Расширенная аналитика", "Свой брендинг", "Работа в команде"],
+    description: "Для тех, кто ценит близких",
+    features: ["Безлимит дат и друзей", "Напоминания за 7, 3, 1 день", "Умные идеи подарков", "Совместный доступ", "Приоритетная поддержка"],
     popular: true,
   },
 ]
@@ -30,7 +30,7 @@ export function PricingSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-5xl font-serif text-foreground">Простые и понятные цены</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Начните бесплатно, платите когда готовы.</p>
+          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Начните бесплатно — платите только когда влюбитесь в сервис.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
