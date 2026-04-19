@@ -7,10 +7,28 @@
       "expectedStatus": 200
     },
     {
-      "name": "Register with email",
+      "name": "Register step 1",
       "method": "POST",
       "path": "/",
-      "body": {"email": "test@example.com", "phone": ""},
+      "body": {"action": "register", "email": "test@example.com", "phone": ""},
+      "expectedStatus": 200,
+      "expectedBody": {"ok": true},
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Submit dates step 2",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "action": "submit_dates",
+        "email": "test@example.com",
+        "phone": "",
+        "personName": "Анна",
+        "occasion": "День рождения",
+        "occasionDate": "2025-06-15",
+        "giftTypes": "Цветы, Сладости",
+        "giftComment": "Любит розы"
+      },
       "expectedStatus": 200,
       "expectedBody": {"ok": true},
       "bodyMatcher": "partial"
