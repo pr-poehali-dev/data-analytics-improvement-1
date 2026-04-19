@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { LenisProvider } from "@/components/lenis-provider"
 import { CustomCursor } from "@/components/custom-cursor"
 import { HeroSection } from "@/components/sections/hero-section"
@@ -8,20 +9,24 @@ import { CarouselSection } from "@/components/sections/carousel-section"
 import { InsightsSection } from "@/components/sections/insights-section"
 import { PricingSection } from "@/components/sections/pricing-section"
 import { FooterSection } from "@/components/sections/footer-section"
+import { RegisterModal } from "@/components/register-modal"
 
 const Index = () => {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <LenisProvider>
       <main className="custom-cursor bg-background">
         <CustomCursor />
-        <HeroSection />
+        <HeroSection onStartClick={() => setModalOpen(true)} />
         <ManifestoSection />
         <FeaturesSection />
         <ShowcaseSection />
         <CarouselSection />
         <InsightsSection />
-        <PricingSection />
+        <PricingSection onStartClick={() => setModalOpen(true)} />
         <FooterSection />
+        <RegisterModal open={modalOpen} onClose={() => setModalOpen(false)} />
       </main>
     </LenisProvider>
   )

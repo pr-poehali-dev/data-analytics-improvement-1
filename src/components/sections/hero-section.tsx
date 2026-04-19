@@ -7,7 +7,11 @@ const images = [
   "https://cdn.poehali.dev/projects/957a3b22-5fd8-4019-958f-03c509698ece/files/e5e67bac-38e2-475f-9e2e-9d3a915c32c2.jpg",
 ]
 
-export function HeroSection() {
+interface HeroSectionProps {
+  onStartClick: () => void
+}
+
+export function HeroSection({ onStartClick }: HeroSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -35,11 +39,7 @@ export function HeroSection() {
           animate={{ clipPath: "inset(0 0 0 0)" }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
-            src={images[0] || "/placeholder.svg"}
-            alt="Портфолио 1"
-            className="w-full h-full object-cover"
-          />
+          <img src={images[0]} alt="Подарки" className="w-full h-full object-cover" />
         </motion.div>
 
         <motion.div
@@ -49,11 +49,7 @@ export function HeroSection() {
           animate={{ clipPath: "inset(0 0 0 0)" }}
           transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
-            src={images[1] || "/placeholder.svg"}
-            alt="Портфолио 2"
-            className="w-full h-full object-cover"
-          />
+          <img src={images[1]} alt="Напоминания" className="w-full h-full object-cover" />
         </motion.div>
 
         <motion.div
@@ -63,16 +59,12 @@ export function HeroSection() {
           animate={{ clipPath: "inset(0 0 0 0)" }}
           transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
         >
-          <img
-            src={images[2] || "/placeholder.svg"}
-            alt="Портфолио 3"
-            className="w-full h-full object-cover"
-          />
+          <img src={images[2]} alt="Открытки" className="w-full h-full object-cover" />
         </motion.div>
       </div>
 
       <motion.div
-        className="absolute inset-0 flex items-center justify-center pointer-events-none z-10"
+        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 gap-8"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.8 }}
@@ -80,6 +72,18 @@ export function HeroSection() {
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-center text-foreground mix-blend-difference">
           Важные даты, <em className="italic">под рукой</em>.
         </h1>
+        <motion.button
+          onClick={onStartClick}
+          className="pointer-events-auto bg-foreground text-background px-8 py-4 rounded-full font-medium text-base hover:bg-foreground/90 transition-colors shadow-xl"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.2 }}
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          data-clickable
+        >
+          Начать бесплатно
+        </motion.button>
       </motion.div>
 
       <motion.div

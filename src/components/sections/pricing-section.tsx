@@ -19,7 +19,11 @@ const plans = [
   },
 ]
 
-export function PricingSection() {
+interface PricingSectionProps {
+  onStartClick: () => void
+}
+
+export function PricingSection({ onStartClick }: PricingSectionProps) {
   return (
     <section className="bg-secondary px-6 py-24">
       <div className="max-w-5xl mx-auto">
@@ -69,6 +73,7 @@ export function PricingSection() {
               </ul>
 
               <button
+                onClick={onStartClick}
                 className={`w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors ${
                   plan.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
