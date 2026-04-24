@@ -161,13 +161,14 @@ def handler(event: dict, context) -> dict:
             conn.commit()
             try:
                 send_welcome_email(email)
-            except Exception:
-                pass
+                print(f"[SMTP] welcome email sent to {email}")
+            except Exception as e:
+                print(f"[SMTP ERROR] welcome email: {e}")
             try:
                 if phone:
                     send_welcome_sms(phone)
-            except Exception:
-                pass
+            except Exception as e:
+                print(f"[SMS ERROR] {e}")
         cur.close()
         conn.close()
         return {"statusCode": 200, "headers": headers, "body": json.dumps({"ok": True})}
@@ -180,12 +181,14 @@ def handler(event: dict, context) -> dict:
 
         try:
             send_date_request_to_owner(body)
-        except Exception:
-            pass
+            print(f"[SMTP] date request sent to owner for {email}")
+        except Exception as e:
+            print(f"[SMTP ERROR] owner email: {e}")
         try:
             send_confirmation_to_user(email, person_name, occasion, occasion_date)
-        except Exception:
-            pass
+            print(f"[SMTP] confirmation sent to {email}")
+        except Exception as e:
+            print(f"[SMTP ERROR] user confirmation: {e}")
 
         return {"statusCode": 200, "headers": headers, "body": json.dumps({"ok": True})}
 
